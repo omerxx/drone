@@ -18,16 +18,16 @@ steps:
   when:
     branch: master
 
-# - name: publish
-#   image: plugins/docker:18
-#   settings:
-#     auto_tag: true
-#     auto_tag_suffix: linux-amd64
-#     dockerfile: docker/Dockerfile.server.linux.amd64
-#     repo: drone/drone
-#     username:
-#       from_secret: docker_username
-#     password:
-#       from_secret: docker_password
-#   when:
-#     branch: master
+- name: publish
+  image: plugins/docker:18
+  settings:
+    auto_tag: true
+    auto_tag_suffix: linux-amd64
+    dockerfile: docker/Dockerfile.server.linux.amd64
+    repo: omerxx/drone
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+  when:
+    branch: master
